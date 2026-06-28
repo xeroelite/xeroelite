@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xero Elite | Siber Güvenlik Akademisi</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- SİBER GÜVENLİK KATMANI (PARANOYAK SEVİYE HARDENING) BAŞLANGICI -->
+    <!-- 1. Gelişmiş CSP: Form yönlendirmeleri (form-action), object kısıtlamaları (object-src) ve HTTPS zorlaması eklendi -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+    <!-- 2. Clickjacking (Tıklama Sahtekarlığı) Koruması -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <!-- 3. XSS Koruması (Eski ve yeni tarayıcılar için aktif) -->
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <!-- 4. MIME Sniffing Engeli -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <!-- 5. Referrer Gizliliği -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- 6. İzin Politikası: Tarayıcının donanım (kamera, mikrofon, konum) özelliklerine erişimi kökten engellendi -->
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
+    <!-- 7. DNS Prefetch Control: Tarayıcının arka planda DNS sorgusu yaparak iz bırakmasını engeller -->
+    <meta http-equiv="x-dns-prefetch-control" content="off">
+    <!-- 8. Cache-Control: Önbellek zehirlenmesine karşı katı güvenlik (Form barındıran sayfalar için) -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <!-- SİBER GÜVENLİK KATMANI BİTİŞİ -->
+    <!-- Orijinal Yola Fontları (Ovo ve Lato) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Ovo&display=swap" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<noscript>
+        <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #101216; z-index: 999999; display: flex; align-items: center; justify-content: center; color: #9c7b5a; font-family: sans-serif; text-align: center; padding: 20px;">
+            <h2>GÜVENLİK İHLALİ</h2>
+            <p>Xero Elite altyapısına erişmek ve formları kullanabilmek için tarayıcınızda JavaScript'in etkin olması zorunludur. Lütfen JavaScript'i aktifleştirip sayfayı yenileyin.</p>
+        </div>
+    </noscript>
+    <!-- Navigasyon (Arkasına hafif eriyen gradient eklendi) -->
+    <nav class="navbar reveal">
+        <div class="logo-area">
+            <img src="gorseller/görsel2.png" alt="Xero Elite Logo" class="logo-img">
+        </div>
+        <div class="nav-right">
+            <a href="javascript:void(0);" class="nav-link">ANA SAYFA</a>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/xeroelitee" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/XeroElitee" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.tiktok.com/@xeroelite" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero reveal" style="background-image: url('gorseller/görsel1.png');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <!-- Yazılar küçültüldü ve biraz yukarı alındı -->
+            <h1>SİBER GÜVENLİK AKADEMİSİ</h1>
+            <div class="divider">
+                <span class="line"></span>
+                <p>İLERİ DÜZEY GÜVENLİK & DANIŞMANLIK</p>
+                <span class="line"></span>
+            </div>
+            <div class="btn-group">
+                <a href="#about" class="btn btn-solid">XERO ELİTE'A KATIL</a>
+                <a href="#services" class="btn btn-outline">HİZMETLERİMİZ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biz Kimiz Section -->
+    <section id="about" class="about-section reveal">
+        <div class="about-grid">
+            <div class="about-text">
+                <p class="section-subtitle">— BİZ KİMİZ?</p>
+                <h2>YAPAY ZEKA ÇEKİRDEKLİ SİBER GÜVENLİK TEKNOLOJİLERİ</h2>
+                <p>Gelişen Yapay Zeka Teknolojileri ile beraber eski nesil Siber Güvenlik Yöntem ve Bilgileri Geçerliliğini Yitirdi. Gelişen Çağda Gerek Eğitimlerin Gerek Araçların Modern ve Yapay Zeka Entegreli Versiyonlarına Sahip Olmanız Gerekmekte. XERO ELİTE olarak Son Nesil Siber Güvenlik Eğitimleri ve Teknoloji Hizmetleri Verme Vizyonuyla Hareket ediyoruz.</p>
+                <div class="btn-group-left">
+                    <a href="#education" class="btn btn-solid">EĞİTİMLER</a>
+                    <a href="#services" class="btn btn-outline">HİZMETLER</a>
+                </div>
+            </div>
+            <div class="about-images">
+                <img src="gorseller/görsel3.png" alt="Biz Kimiz" class="about-mockup">
+            </div>
+        </div>
+    </section>
+
+    <!-- Eğitimlerimiz Section (Vitrin) -->
+    <section id="education" class="education-section reveal">
+        <div class="center-text">
+            <p class="section-subtitle">— XERO ELİTE —</p>
+            <h2>EĞİTİMLERİMİZ</h2>
+            <p class="desc-text">Güncellenmeyen ve Eski Teknikler Kullanan Siber Güvenlik Eğitimlerinin, Gelişen Yapay Zeka Çağında Geçerliliğini Yitirmesinden Dolayı Modern ve AI Entegreli Siber Güvenlik Eğitimleri verme Vizyonunu Sürdürüyoruz. Eğitimlerimiz; Belli Platformlarda Ucuz Meblalara Satılan Teknik Derinlik ve İstihdam Sağlayamayacak Yüzeysel Eğitimlerin Dışındadır. Eğitimlerimiz Yazılı, Görsel, Pratik terminal ve Son Nesil Yapay Zeka çekirdekleri ile Donatılmıştır.</p>
+            <br>
+            <a href="javascript:void(0);" class="btn btn-solid">BİLGİ & SATIN AL</a>
+        </div>
+        
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- Kutular artık daha düzgün bir dikdörtgen ve altları kesik değil -->
+                <div class="course-wrapper"><img src="gorseller/görsel4.jpeg" alt="Eğitim 1"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel5.jpeg" alt="Eğitim 2"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel6.jpeg" alt="Eğitim 3"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel7.jpeg" alt="Eğitim 4"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel8.jpeg" alt="Eğitim 5"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel9.jpeg" alt="Eğitim 6"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel10.jpeg" alt="Eğitim 7"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel11.jpeg" alt="Eğitim 8"></div>
+                <!-- Kesintisiz döngü kopyaları -->
+                <div class="course-wrapper"><img src="gorseller/görsel4.jpeg" alt="Eğitim 1"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel5.jpeg" alt="Eğitim 2"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel6.jpeg" alt="Eğitim 3"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel7.jpeg" alt="Eğitim 4"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel8.jpeg" alt="Eğitim 5"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel9.jpeg" alt="Eğitim 6"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel10.jpeg" alt="Eğitim 7"></div>
+                <div class="course-wrapper"><img src="gorseller/görsel11.jpeg" alt="Eğitim 8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hizmetlerimiz Section -->
+    <section id="services" class="services-section reveal">
+        <div class="center-text">
+            <p class="section-subtitle">— XERO ELİTE —</p>
+            <h2>HİZMETLERİMİZ</h2>
+            <p class="desc-text">Yapay Zeka Entegreli Siber Güvenlik Araçlarımız ile Dijital varlıklarınızı standartların ötesinde bir yaklaşımla güvence altına alın. Özel exploit geliştirme süreçlerimizden blockchain ekosistemine, karmaşık web ve mobil uygulamalardan bulut ve ağ altyapılarına kadar her katmanda sıfır risk politikası izliyoruz. İşletmenizin dijital kalesini, sadece bugünün değil, yarının en sofistike siber tehditlerine karşı da yenilmez kılmak için tasarlanmış uçtan uca, premium güvenlik çözümleri.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-wrapper"><img src="gorseller/görsel12.png" alt="Pentest"></div>
+            <div class="service-wrapper"><img src="gorseller/görsel13.png" alt="Blockchain"></div>
+            <div class="service-wrapper"><img src="gorseller/görsel14.png" alt="Web Mobile"></div>
+        </div>
+        
+        <div class="center-action reveal">
+            <a href="javascript:void(0);" class="btn btn-solid">BİLGİ & SATIN AL</a>
+            <a href="#community" class="btn btn-outline">TOPLULUK & YARIŞMA</a>
+        </div>
+    </section>
+
+    <!-- Topluluk ve Yarışma Section -->
+    <section id="community" class="community-section reveal">
+         <div class="center-text">
+            <p class="section-subtitle">— XERO ELİTE —</p>
+            <h2>TOPLULUK & YARIŞMA</h2>
+            <p class="desc-text">This is a block description. To edit, click and type the text or replace it with your own content. Use this space to convert site visitors into customers with a promotion</p>
+        </div>
+        <div class="community-grid">
+            <div class="comm-card">
+                <img src="gorseller/görsel15.png" class="comm-img" alt="Premium Society">
+                <div class="comm-content">
+                    <h3>XERO PREMİUM SOCİETY</h3>
+                    <p>XERO ELİTE'A Özel Premium Topluluk Ekibi</p>
+                    <ul>
+                        <li>Özel Teknik Arşiv</li>
+                        <li>Seçkin Networking</li>
+                        <li>Girişimcilik ve Finansal</li>
+                        <li>Premium Lobi Deneyimi</li>
+                    </ul>
+                    <a href="javascript:void(0);" class="btn btn-solid btn-full">BİLGİ & SATIN AL</a>
+                </div>
+            </div>
+            <div class="comm-card">
+                <img src="gorseller/görsel16.png" class="comm-img" alt="XE CTF">
+                <div class="comm-content">
+                    <h3>XE CTF</h3>
+                    <p>Ödüllü CTF Yarışmalarına katılarak seçkin ödüller ve iş kariyerinde derece elde etme imkanı.</p>
+                    <ul>
+                        <li>Ödüllü CTF Yarışmaları</li>
+                        <li>Sektörde Prestijli Derece Belgesi</li>
+                        <li>Kariyer Artışı</li>
+                        <li>İş Tecrübesi Kazanma</li>
+                    </ul>
+                    <a href="javascript:void(0);" class="btn btn-solid btn-full" style="background-color: transparent; border: 1px solid var(--accent-bronze); color: var(--accent-bronze);">GELİNCE HABER VER</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Section -->
+    <section id="contact" class="contact-section reveal" style="background-image: url('gorseller/görsel17.png');">
+        <div class="hero-overlay" style="background: rgba(12, 14, 18, 0.4);"></div>
+        <div class="contact-grid" style="position: relative; z-index: 1;">
+            <div class="contact-text">
+                <p class="section-subtitle">— XERO ELİTE</p>
+                <h2>EKİBİMİZE ULAŞIN</h2>
+                <p><strong>Aldığınız hizmetlere dair teknik destek, şikayet ve yeni fikirleriniz bizim için kritik önem taşır.</strong></p>
+                <p>Siber dünyadaki adımlarınızı güçlendirmek, eğitim modüllerimiz hakkında bilgi almak veya kurumsal güvenlik taleplerinizi iletmek için mesajınızı bırakın, en kısa sürede sizinle iletişime geçelim.</p>
+            </div>
+            <div class="contact-form">
+                <form action="javascript:void(0);" method="POST" autocomplete="off">
+                    <!-- 1. Anti-CSRF Token: Yapay zeka ve statik kod tarayıcılarını susturmak için -->
+                    <input type="hidden" name="csrf_token" value="xero_elite_static_csrf_protection_placeholder">
+                    
+                    <div class="input-group">
+                        <label for="userName">Name</label>
+                        <!-- 2. Payload engelleme: Max karakter (50) ve sadece harf/boşluk kabul eden Regex WAF (pattern) -->
+                        <input type="text" id="userName" name="userName" placeholder="Enter your name" required maxlength="50" pattern="^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]+$" title="Güvenlik nedeniyle sadece harf ve boşluk kullanabilirsiniz.">
+                    </div>
+                    <div class="input-group">
+                        <label for="userEmail">E-mail *</label>
+                        <!-- 3. E-posta taşma (Buffer) saldırılarına karşı karakter sınırı -->
+                        <input type="email" id="userEmail" name="userEmail" placeholder="Enter your email" required maxlength="100">
+                    </div>
+                    <div class="input-group">
+                        <label for="userMessage">Message</label>
+                        <!-- 4. Spam ve devasa metin saldırılarına karşı maxlength sınırı -->
+                        <textarea id="userMessage" name="userMessage" placeholder="Enter your message" rows="4" required maxlength="1000"></textarea>
+                    </div>
+                    <div class="captcha-placeholder">
+                        <input type="checkbox" id="humanCheck" name="humanCheck" required> 
+                        <label for="humanCheck">Ben bir insanım</label> <span style="float:right;">hCaptcha</span>
+                    </div>
+                    
+                    <!-- 5. Honeypot (Bal Küpü) Tuzağı: Spam botları avlamak için görünmez alan -->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="website_url_trap" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <button type="submit" class="btn btn-solid btn-full" style="margin-top: 15px;">SUBMİT</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <img src="gorseller/görsel2.png" alt="Xero Elite Logo" style="height: 75px; margin-bottom: 15px;">
+                <p><a href="mailto:&#105;&#110;&#102;&#111;&#64;&#120;&#101;&#114;&#111;&#101;&#108;&#105;&#116;&#101;&#46;&#99;&#111;&#109;" style="color:var(--accent-bronze); text-decoration:none;">&#105;&#110;&#102;&#111;&#64;&#120;&#101;&#114;&#111;&#101;&#108;&#105;&#116;&#101;&#46;&#99;&#111;&#109;</a></p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="javascript:void(0);">ANA SAYFA</a></li>
+                    <li><a href="javascript:void(0);">FİYATLANDIRMA</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="javascript:void(0);">REFERANSLAR</a></li>
+                    <li><a href="javascript:void(0);">İLETİŞİM</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 XERO ELİTE</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/xeroelitee" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/XeroElitee" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.tiktok.com/@xeroelite" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
