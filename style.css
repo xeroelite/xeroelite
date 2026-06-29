@@ -686,33 +686,31 @@ footer {
 }
 
 /* İKONLAR VE KUTUCUKLARI YOK EDEN TASARIM */
+/* =========================================
+   GÜVENLİ LOGO KONTROLÜ (XSS ve CSP Uyumlu)
+   ========================================= */
 .footer-logos {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 35px;
+    gap: 40px;
     margin-bottom: 30px;
 }
 
-.pay-logo {
-    height: 22px;
-    width: auto;
-    opacity: 0.4; /* Gizemli ve soluk duruş */
-    filter: invert(100%) grayscale(100%); /* İkonları beyaza ve griye çevirir */
-    transition: all 0.4s ease;
-    border: none;
-    outline: none;
+.secure-logo {
+    fill: #475569; /* Soluk, siber gri başlangıç rengi */
+    transition: fill 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 }
 
-.pay-logo:hover {
-    opacity: 1;
-    transform: translateY(-3px); /* Üzerine gelince yukarı doğru yumuşak kayma */
+.secure-logo:hover {
+    fill: #ffffff; /* Üstüne gelince bembeyaz parlama efekti */
+    transform: translateY(-2px); /* Çok hafif yukarı kalkma efekti */
 }
 
-.iyzico-logo {
-    height: 24px;
-    filter: grayscale(100%) brightness(200%);
-}
+/* iyzico logosunun içindeki orijinal mavi ve siyah renkleri koruma */
+.iyzico-svg rect { fill: #38bdf8 !important; }
+.iyzico-svg .iyzico-text { fill: #030712 !important; }
 
 /* ALT TELİF YAZISI */
 .footer-copy {
