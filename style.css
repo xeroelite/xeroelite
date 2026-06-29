@@ -494,51 +494,42 @@ footer {
     transform: translateY(0);
 }
 /* =========================================================
-   MOBİL GÖRÜNÜM V4 (Sıfır Boşluk, Tam Kırpma ve Ortalama)
+   MOBİL GÖRÜNÜM V5 (Sıfır Siyah Boşluk, %25 Kırpma, Tam Ortalama)
    ========================================================= */
 @media only screen and (max-width: 768px) {
-    /* 1. Genel Taşkınlıkları Önleme */
     html, body { overflow-x: hidden !important; width: 100% !important; }
 
-    /* 2. HEADER: Aşağı çekildi ve logo zarifleştirildi */
+    /* 1. HEADER (Aşağı çekildi, logo çok hafif küçültüldü) */
     .navbar {
         display: flex !important;
         flex-direction: row !important;
         justify-content: space-between !important;
         align-items: center !important;
-        padding: 25px 15px 10px 15px !important; /* Üstten 25px boşluk ile aşağı çekildi */
+        padding: 35px 20px 10px 20px !important; /* Üstten 35px boşluk ile aşağı alındı */
     }
     .logo-area { display: block !important; }
     .logo-img {
-        max-width: 65px !important; /* Logo bir tık daha küçültüldü */
+        max-width: 55px !important; /* Logo estetik boyuta çekildi */
         height: auto !important;
     }
     .nav-right {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
-        gap: 12px !important;
+        gap: 15px !important;
         margin-top: 0 !important;
     }
     .nav-link { font-size: 0.75rem !important; }
-    .nav-right .social-icons {
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 8px !important;
-    }
-    .nav-right .social-icons i { font-size: 0.95rem !important; }
+    .nav-right .social-icons { display: flex !important; gap: 10px !important; }
 
-    /* 3. HERO (Ana Ekran Orantıları) */
+    /* 2. HERO (Ana Ekran Orantıları) */
     .hero-content h1 { font-size: 1.8rem !important; line-height: 1.2 !important; }
     .hero-content .divider p { font-size: 0.75rem !important; }
     .btn-group { display: flex !important; flex-direction: column !important; gap: 15px !important; align-items: center !important; }
     .btn { width: 100% !important; max-width: 280px !important; }
 
-    /* 4. EĞİTİMLERİMİZ (Yatay Kaydırma ve PC Oranları Korundu) */
-    .carousel-container {
-        overflow-x: auto !important;
-        padding-bottom: 15px !important;
-    }
+    /* 3. EĞİTİMLERİMİZ (PC formatı korundu, boyutlar mobile uyarlandı) */
+    .carousel-container { overflow-x: auto !important; padding-bottom: 15px !important; }
     .carousel-track {
         display: flex !important;
         flex-direction: row !important;
@@ -547,35 +538,49 @@ footer {
         width: max-content !important;
     }
     .course-wrapper {
-        flex: 0 0 240px !important;
-        width: 240px !important;
+        flex: 0 0 220px !important; /* Kutu genişliği mobil için ideal oran */
+        width: 220px !important;
     }
 
-    /* 5. GÖRSELLERDEKİ SİYAH BOŞLUKLARI SİLME VE %18 ZOOM */
-    /* Kutucuk ayarları (Taşan kısımları jilet gibi keser, siyahlık bırakmaz) */
-    .course-wrapper, .service-wrapper, .comm-card {
+    /* 4. SİYAH BOŞLUKLARI YOK ETME VE %25 ZOOM (Gemini Logoları Gider) */
+    .course-wrapper, .service-wrapper {
         border-radius: 12px !important;
-        overflow: hidden !important; 
-        display: block !important; /* Siyah boşluğu kökten çözer */
+        overflow: hidden !important; /* Taşan logoları keser */
         background: transparent !important; 
-        position: relative !important;
         margin: 0 !important;
         padding: 0 !important;
-        line-height: 0 !important; /* Görüntü altı ölü boşlukları sıfırlar */
+        font-size: 0 !important; /* Alt siyah boşluğu kökten kazır */
+        line-height: 0 !important;
+        display: block !important;
     }
-    /* Görsel ayarları (%18 Yakınlaştırma ile logoları yutar) */
-    .course-wrapper img, .service-wrapper img, .comm-img {
+    .course-wrapper img, .service-wrapper img {
         width: 100% !important;
-        height: auto !important;
-        display: block !important; /* Boşluk engelleyici kritik kod */
+        height: 100% !important; /* Siyah ekran yerine tam doldurur */
+        display: block !important;
         object-fit: cover !important;
-        transform: scale(1.18) !important; /* %18 Yakınlaştırma (Gemini logoları tarihe karışır) */
+        transform: scale(1.25) !important; /* %25 Yakınlaştırma (Sağ alt tamamen yok olur) */
         transform-origin: center center !important;
         border-radius: 12px !important;
         margin: 0 !important;
     }
 
-    /* 6. HİZMETLER & TOPLULUK & İLETİŞİM GRİDLERİ */
+    /* 5. TOPLULUK VE YARIŞMA (Taşma/Üst Üste Binme Engellendi) */
+    .comm-card {
+        border-radius: 12px !important;
+        overflow: hidden !important; /* Resmin dışarı taşmasını KESİNLİKLE engeller */
+        background: transparent !important;
+    }
+    .comm-img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        object-fit: cover !important;
+        transform: scale(1.20) !important; /* Kutuyu taşırmadan resmi yakınlaştırır */
+        transform-origin: center center !important;
+        margin: 0 !important;
+    }
+
+    /* 6. GRIDLER VE HİZALAMA */
     .services-grid, .community-grid, .about-grid, .contact-grid {
         display: flex !important;
         flex-direction: column !important;
@@ -585,40 +590,37 @@ footer {
     .contact-form { width: 100% !important; max-width: 100% !important; padding: 15px !important; box-sizing: border-box !important; }
     h2 { font-size: 1.5rem !important; text-align: center !important; }
     .about-text, .contact-text, .comm-content, .section-subtitle, .desc-text { text-align: center !important; }
-    .comm-content ul { display: inline-block !important; text-align: left !important; }
+    .comm-content ul { display: inline-block !important; text-align: left !important; margin-top: 15px !important; }
 
-    /* 7. FOOTER: Üst kısım tam ortalandı, alt kısım sabitlendi */
+    /* 7. FOOTER (Senin Dediğin Gibi Ortalandı, En Alt Sabit) */
     .footer-grid {
         display: flex !important;
         flex-direction: column !important;
-        gap: 20px !important;
-        text-align: center !important; /* Metinleri Ortalar */
-        align-items: center !important; /* Öğeleri Ortalar */
-        padding: 20px 15px !important;
+        gap: 15px !important;
+        align-items: center !important; /* Her şeyi merkeze çeker */
+        text-align: center !important;
+        padding: 20px 15px 5px 15px !important;
     }
     .footer-logo {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important; /* Logo ve Mail Ortalandı */
+        align-items: center !important;
+        gap: 0px !important;
     }
     .footer-logo img {
-        max-width: 80px !important; 
-        margin-bottom: 5px !important;
+        max-width: 60px !important; /* Logo daha da küçüldü */
+        margin-bottom: 2px !important; /* Gmail'in hemen dibine girdi */
     }
-    .footer-links {
-        text-align: center !important; /* Linkler Ortalandı */
-    }
+    .footer-links { text-align: center !important; width: 100% !important; }
+    
+    /* En alt satıra dokunulmadı (2026 yazısı solda, ikonlar sağda kaldı) */
     .footer-bottom {
         display: flex !important;
         flex-direction: row !important; 
-        justify-content: space-between !important; /* PC'deki gibi İkonlar sağda, yazı solda */
+        justify-content: space-between !important;
         align-items: center !important;
         padding: 15px !important;
     }
     .footer-bottom p { margin: 0 !important; font-size: 0.8rem !important; }
-    .footer-bottom .social-icons {
-        display: flex !important;
-        gap: 15px !important;
-        justify-content: flex-end !important; 
-    }
+    .footer-bottom .social-icons { display: flex !important; gap: 15px !important; }
 }
