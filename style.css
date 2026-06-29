@@ -639,67 +639,84 @@ footer {
 }
 
 /* =========================================
-   IYZICO YASAL FOOTER (ALT BİLGİ) TASARIMI 
+   XERO ELITE - PREMIUM FOOTER TASARIMI
    ========================================= */
 .legal-footer {
-    background-color: #080b12; /* Sitenin karanlık hacker temasına tam uyumlu */
-    border-top: 1px solid #1a233a; /* Üstte ince ve şık bir ayırıcı çizgi */
-    padding: 50px 20px 30px 20px;
+    background-color: #04060a; /* Sitenin temasına uygun daha derin, elit bir siyah */
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Üstte çok zarif, ince bir çizgi */
+    padding: 60px 20px 40px 20px;
     margin-top: 80px;
     text-align: center;
     font-family: 'Lato', sans-serif;
 }
 
 .footer-container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
+/* LİNKLERİN PREMIUM YERLEŞİMİ */
 .footer-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-    margin-bottom: 30px;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
 }
 
 .footer-links a {
     color: #8892b0;
     text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
+    font-size: 12px;
+    letter-spacing: 1.5px; /* Harf arası boşluk elit bir görünüm katar */
+    text-transform: uppercase; /* Kurumsal bir hava için büyük harf */
+    transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #ffffff; /* Linkin üstüne gelince parlama efekti */
+    color: #38bdf8; /* Xero Elite mavi parlama efekti */
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
 }
 
+.separator {
+    color: #1e293b;
+    font-size: 14px;
+    user-select: none;
+}
+
+/* İKONLAR VE KUTUCUKLARI YOK EDEN TASARIM */
 .footer-logos {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
-    margin-bottom: 25px;
+    gap: 35px;
+    margin-bottom: 30px;
 }
 
 .pay-logo {
-    height: 25px;
-    opacity: 0.6;
-    transition: all 0.3s ease;
-    filter: grayscale(100%); /* Sitenin ciddiyetini bozmaması için gri duracak */
+    height: 22px;
+    width: auto;
+    opacity: 0.4; /* Gizemli ve soluk duruş */
+    filter: invert(100%) grayscale(100%); /* İkonları beyaza ve griye çevirir */
+    transition: all 0.4s ease;
+    border: none;
+    outline: none;
 }
 
 .pay-logo:hover {
     opacity: 1;
-    filter: grayscale(0%); /* Mouse gelince orijinal renkler canlanacak */
-    transform: scale(1.05);
+    transform: translateY(-3px); /* Üzerine gelince yukarı doğru yumuşak kayma */
 }
 
 .iyzico-logo {
-    height: 28px;
+    height: 24px;
+    filter: grayscale(100%) brightness(200%);
 }
 
+/* ALT TELİF YAZISI */
 .footer-copy {
-    color: #59647e;
+    color: #475569;
     font-size: 12px;
+    letter-spacing: 0.5px;
 }
