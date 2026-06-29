@@ -494,7 +494,7 @@ footer {
     transform: translateY(0);
 }
 /* =========================================================
-   MOBİL GÖRÜNÜM V6 (İnce Ayarlar, Orantılı Zoom, Yeni Footer)
+   MOBİL GÖRÜNÜM V7 (Kusursuz Oranlar ve Yeni Mail Konumu)
    ========================================================= */
 @media only screen and (max-width: 768px) {
     html, body { overflow-x: hidden !important; width: 100% !important; }
@@ -525,7 +525,7 @@ footer {
     .btn-group { display: flex !important; flex-direction: column !important; gap: 15px !important; align-items: center !important; }
     .btn { width: 100% !important; max-width: 280px !important; }
 
-    /* 3. EĞİTİMLERİMİZ (Kutular küçültüldü, PC stili korundu) */
+    /* 3. EĞİTİMLERİMİZ (Kutu şekli/boyutu korundu) */
     .carousel-container { overflow-x: auto !important; padding-bottom: 15px !important; }
     .carousel-track {
         display: flex !important;
@@ -535,18 +535,18 @@ footer {
         width: max-content !important;
     }
     .course-wrapper {
-        flex: 0 0 175px !important; /* Kutucuklar mobil orana göre küçültüldü */
+        flex: 0 0 175px !important;
         width: 175px !important;
     }
 
-    /* 4. SİYAH BOŞLUKLARI YOK ETME VE %12 HAFİF ZOOM (Logolar tam sınırda kesilir) */
+    /* 4. %6 HAFİF ZOOM (Siyahlık yok, tam bilgisayar orantısı) */
     .course-wrapper, .service-wrapper {
         border-radius: 12px !important;
         overflow: hidden !important; 
         background: transparent !important; 
         margin: 0 !important;
         padding: 0 !important;
-        font-size: 0 !important; /* Siyah boşluk düşmanı ana kod */
+        font-size: 0 !important; 
         line-height: 0 !important;
         display: block !important;
     }
@@ -555,16 +555,16 @@ footer {
         height: 100% !important;
         display: block !important;
         object-fit: cover !important;
-        transform: scale(1.12) !important; /* Zoom hafifletildi, tasarım geri geldi */
+        transform: scale(1.06) !important; /* Zoom tam kararında küçültüldü */
         transform-origin: center center !important;
         border-radius: 12px !important;
         margin: 0 !important;
     }
 
-    /* 5. TOPLULUK VE YARIŞMA (Taşma kesin olarak engellendi) */
+    /* 5. TOPLULUK VE YARIŞMA */
     .comm-card {
         border-radius: 12px !important;
-        overflow: hidden !important; /* Taşmaları tıraşlar */
+        overflow: hidden !important;
         background: transparent !important;
         display: flex !important;
         flex-direction: column !important;
@@ -572,7 +572,7 @@ footer {
     .comm-img {
         width: 100% !important;
         height: auto !important;
-        max-height: 220px !important; /* Resmin haddini aşıp aşağı taşmasını engeller */
+        max-height: 220px !important;
         display: block !important;
         object-fit: cover !important;
         transform: scale(1.10) !important; 
@@ -587,18 +587,19 @@ footer {
     .about-text, .contact-text, .comm-content, .section-subtitle, .desc-text { text-align: center !important; }
     .comm-content ul { display: inline-block !important; text-align: left !important; margin-top: 15px !important; }
 
-    /* 7. FOOTER (Tam İstediğin Özel Yapı) */
+    /* 7. FOOTER (Mail tam kırmızı çizgiye oturtuldu) */
     footer {
         position: relative !important;
-        padding-bottom: 50px !important; /* Mailin sığması için alt tarafta özel boşluk açtık */
+        padding-bottom: 0 !important; 
     }
     .footer-grid {
+        position: relative !important;
         display: flex !important;
         flex-direction: column !important;
         gap: 20px !important;
         align-items: center !important; 
         text-align: center !important;
-        padding: 20px 15px 5px 15px !important;
+        padding: 20px 15px 50px 15px !important; /* Alt tarafa mail için estetik boşluk açıldı */
     }
     .footer-logo {
         display: flex !important;
@@ -607,29 +608,31 @@ footer {
     }
     .footer-logo img {
         max-width: 65px !important; 
-        height: auto !important; /* Eğiklik/baskı hatasını düzeltir */
-        transform: none !important; /* Yamukluk varsa sıfırlar */
-        margin-bottom: 15px !important;
+        height: auto !important; 
+        transform: none !important; 
+        margin-bottom: 0 !important; 
     }
     .footer-links { text-align: center !important; width: 100% !important; }
     
-    /* GMAIL (2026 yazısının tam altına, en sola hizalandı) */
+    /* GMAIL YENİ KONUMU */
     .footer-logo p {
         position: absolute !important;
-        bottom: 12px !important; /* 2026'nın altında hafif boşlukla durur */
-        left: 15px !important; /* 2026 yazısı ile aynı sol hizada */
-        margin: 0 !important;
-        font-size: 0.85rem !important;
+        bottom: 10px !important; /* İletişim yazısının altı, çizginin üstü */
+        left: 0 !important;
+        right: 0 !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        font-size: 1.05rem !important; /* Boyutu estetik olarak artırıldı */
     }
 
-    /* EN ALT SATIR (Dokunulmadı, İkonlar sağda) */
+    /* EN ALT SATIR */
     .footer-bottom {
         display: flex !important;
         flex-direction: row !important; 
         justify-content: space-between !important;
         align-items: center !important;
         padding: 15px !important;
-        margin-bottom: 30px !important; /* Altında duran Mail için alanı boş bırakır */
+        margin-bottom: 0 !important; 
     }
     .footer-bottom p { margin: 0 !important; font-size: 0.8rem !important; }
     .footer-bottom .social-icons { display: flex !important; gap: 15px !important; }
