@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; script-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="no-referrer">
+    <title>Xero Elite | Kurumsal Kimlik ve Vizyon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Ovo&display=swap" rel="stylesheet">
+    <style>
+        :root { --xero-gold: #9c7b5a; --xero-dark: #0B0E14; --xero-panel: #11151c; --text-muted: #64748b; }
+        body { background-color: var(--xero-dark); color: #E2E8F0; font-family: 'Lato', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        .top-logo { position: absolute; top: 30px; left: 40px; width: 80px; transition: all 0.3s ease; }
+        .top-logo:hover { transform: scale(1.05); filter: drop-shadow(0 0 10px rgba(156, 123, 90, 0.4)); }
+        .legal-container { max-width: 780px; margin: 100px auto 50px auto; background: rgba(17, 21, 28, 0.65); backdrop-filter: blur(15px); border: 1px solid rgba(156, 123, 90, 0.2); border-radius: 12px; padding: 45px 50px; box-shadow: 0 25px 50px rgba(0,0,0,0.9), inset 0 0 20px rgba(156, 123, 90, 0.05); transition: all 0.4s ease; }
+        .legal-container:hover { box-shadow: 0 25px 60px rgba(0,0,0,1), inset 0 0 30px rgba(156, 123, 90, 0.1); border-color: rgba(156, 123, 90, 0.4); }
+        .legal-header { text-align: center; margin-bottom: 35px; border-bottom: 1px solid rgba(156,123,90,0.2); padding-bottom: 25px; }
+        .legal-header h1 { font-family: 'Ovo', serif; color: var(--xero-gold); font-size: 24px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; text-shadow: 0 0 15px rgba(156,123,90,0.3); }
+        .legal-header p { color: var(--text-muted); font-size: 12px; }
+        .legal-content h2 { font-family: 'Ovo', serif; color: var(--xero-gold); font-size: 16px; margin-top: 35px; margin-bottom: 15px; border-left: 3px solid var(--xero-gold); padding-left: 12px; background: rgba(156, 123, 90, 0.03); padding-top: 8px; padding-bottom: 8px; letter-spacing: 1px; }
+        .legal-content p, .legal-content li { color: #94a3b8; font-size: 13px; line-height: 1.7; margin-bottom: 12px; text-align: justify; transition: color 0.3s ease; }
+        .legal-content p:hover, .legal-content li:hover { color: #e2e8f0; } 
+        .legal-content ul { padding-left: 20px; margin-bottom: 20px; }
+        .legal-content li::marker { color: var(--xero-gold); font-size: 10px; }
+        .highlight { color: #ef4444; font-weight: bold; background: rgba(239, 68, 68, 0.1); padding: 2px 5px; border-radius: 3px; }
+        .strong-gold { color: var(--xero-gold); font-weight: bold; }
+        .site-footer { background-color: transparent; padding: 40px 20px 20px 20px; text-align: center; border-top: 1px solid #1e293b; margin-top: auto; }
+        .footer-links { margin-bottom: 25px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 12px; letter-spacing: 1.5px; margin: 0 15px; text-transform: uppercase; transition: all 0.3s ease; }
+        .footer-links a:hover { color: var(--xero-gold); text-shadow: 0 0 10px rgba(156, 123, 90, 0.5); }
+        .footer-links span { color: #334155; }
+        .copyright { color: #475569; font-size: 12px; }
+        @media only screen and (max-width: 768px) { body { padding: 20px 10px; } .legal-container { padding: 25px 20px; margin-top: 80px; } .legal-header h1 { font-size: 20px; } .legal-content h2 { font-size: 16px; margin-top: 25px; } .legal-content p, .legal-content li { font-size: 14px; } .top-logo { top: 15px; left: 15px; width: 60px; } .footer-links a { display: block; margin: 10px 0; } .footer-links span { display: none; } }
+    /* NSA YAMASI: Iframe, kopyalama, sürükle-bırak hırsızlığı ve gömülü obje kilidi */
+        body { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+        iframe, object, embed { display: none !important; pointer-events: none !important; }
+        img, a, svg { -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-select: none; }
+    </style>
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+
+    <a href="index.html">
+        <img src="gorseller/gorsel2.webp" alt="Xero Elite Logo" class="top-logo">
+    </a>
+
+    <div class="legal-container">
+        <div class="legal-header">
+            <h1>Hakkımızda</h1>
+            <p>Yeni Nesil Siber Güvenlik Akademisi & Teknoloji Sağlayıcısı</p>
+        </div>
+
+        <div class="legal-content">
+            <h2>BİZ KİMİZ?</h2>
+            <p>Xero Elite Siber Güvenlik Akademisi; dijital dünyanın en karmaşık ve kritik güvenlik katmanlarına hükmetmek üzere kurulan, yeni nesil bir Ar-Ge ve Eğitim karargahıdır. Standart teorik bilgilerin dışına çıkarak; <span class="strong-gold">Yapay Zeka (AI) destekli exploit geliştirme, kurumsal sızma testleri (Pentest), SOC analizi ve White-Hat stratejilerini</span> modern tekniklerle harmanlıyoruz.</p>
+
+            <h2>TEKNOLOJİ VE EĞİTİM FELSEFEMİZ</h2>
+            <p>Siber tehditlerin yapay zeka ile otomatikleştiği bir çağda, eski nesil PDF dosyaları ve güncelliğini yitirmiş araçlarla savunma yapılamaz. Xero Elite olarak, 8 modülden oluşan kapsamlı müfredatımızı ve saha notlarımızı, özel olarak şifrelenmiş interaktif web görüntüleyicileri üzerinden elit öğrencilerimize sunuyoruz. Kalitemiz, içeriğimizin kopyalanamaz güvenlik altyapısında yatmaktadır.</p>
+
+            <h2>GÜVENLİK VE ETİK (WHITE-HAT) VİZYONU</h2>
+            <p>Akademimiz, siber güvenlik yeteneklerini yalnızca kurumsal yapıları korumak, güvenlik açıklarını tespit edip yamamak (Patching) amacıyla kullanacak <span class="highlight">Beyaz Şapkalı Hacker (White-Hat)</span> etiğine sahip uzmanlar yetiştirmeyi hedefler. Öğretilen ileri düzey tekniklerin yasa dışı sistemlerde kullanılmasını kesinlikle reddediyoruz.</p>
+
+            <h2>XERO PREMIUM SOCIETY</h2>
+            <p>Biz sadece bir eğitim platformu değil, aynı zamanda elit bir topluluğuz. CTF yarışmalarımız, güncel tehdit istihbaratı paylaşımlarımız ve Premium Society ekibimiz ile siber güvenlik sektöründe kalıcı, güçlü ve yenilmez bir ekosistem inşa ediyoruz.</p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="hakkimizda.html" style="color: #9c7b5a; text-shadow: 0 0 10px rgba(156, 123, 90, 0.5);">HAKKIMIZDA</a> <span>•</span>
+            <a href="mesafeli-satis.html">MESAFELİ SATIŞ SÖZLEŞMESİ</a> <span>•</span>
+            <a href="gizlilik.html">GİZLİLİK SÖZLEŞMESİ</a> <span>•</span>
+            <a href="iptal-iade.html">İPTAL VE İADE ŞARTLARI</a> <span>•</span>
+            <a href="xero-sozlesmesi.html">XERO ELİTE SÖZLEŞMESİ</a>
+        </div>
+        <div class="copyright">
+            © 2026 Xero Elite Siber Güvenlik Akademisi. Tüm Hakları Saklıdır.
+        </div>
+    </footer>
+
+</body>
+</html>

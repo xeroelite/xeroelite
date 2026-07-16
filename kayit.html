@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xero Elite | Güvenli Kayıt</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self'; script-src 'self'; connect-src 'self' https://xero-api.xeroelite.workers.dev; object-src 'none'; base-uri 'self'; form-action 'self' https://xero-api.xeroelite.workers.dev; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; block-all-mixed-content;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+    <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Permissions-Policy" content="accelerometer=(), autoplay=(), camera=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), sync-xhr=(), usb=(), screen-wake-lock=(), xr-spatial-tracking=()">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <link rel="preconnect" href="https://xero-api.xeroelite.workers.dev" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Ovo&display=swap" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        /* --- RENK VE TEMA AYARLARI --- */
+        :root {
+            --xero-gold: #9c7b5a; 
+            --xero-dark: #0B0E14;
+            --xero-panel: #11151c;
+            --text-muted: #64748b;
+        }
+
+        body { 
+            background-color: var(--xero-dark); 
+            color: #E2E8F0; 
+            font-family: 'Lato', sans-serif; 
+            margin: 0; padding: 0; 
+            display: flex; flex-direction: column; 
+            min-height: 100vh; 
+        }
+
+        /* --- SOL ÜST LOGO --- */
+        .top-logo {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            width: 80px; 
+            transition: all 0.3s ease;
+        }
+        .top-logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 10px rgba(179, 140, 75, 0.4));
+        }
+
+        /* --- ANA İSKELET VE İKİ SÜTUNLU YAPI --- */
+        .main-content {
+            flex: 1;
+            padding: 100px 20px 40px 20px; 
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .register-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* SOL TARAF (FORM) */
+        .form-part { flex: 1.5; min-width: 300px; }
+        
+        .form-container { 
+            background: var(--xero-panel); 
+            border: 1px solid #252d3d; 
+            border-radius: 8px; 
+            padding: 50px 40px; 
+            width: 100%; 
+            box-sizing: border-box;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7); 
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Üstteki altın sarısı elit çizgi */
+        .form-container::before, .summary-part::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--xero-gold);
+            box-shadow: 0 0 15px var(--xero-gold);
+        }
+
+        .form-header { text-align: center; margin-bottom: 35px; }
+        .form-header h2 { font-family: 'Ovo', serif; color: var(--xero-gold); font-size: 26px; margin: 0 0 10px 0; font-weight: normal; letter-spacing: 1.2px; }
+        .form-header p { color: var(--text-muted); font-size: 13px; margin: 0; }
+        
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; font-size: 10px; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            width: 16px; height: 16px;
+            fill: var(--text-muted);
+            transition: fill 0.3s ease;
+        }
+
+        .input-wrapper input { 
+            width: 100%; box-sizing: border-box; 
+            background: #080a0f; border: 1px solid #1e293b; 
+            color: #F8FAFC; padding: 14px 15px 14px 45px; 
+            border-radius: 4px; font-size: 14px; 
+            transition: all 0.3s ease; 
+        }
+        
+        .input-wrapper:focus-within .input-icon { fill: var(--xero-gold); }
+        .input-wrapper input:focus { 
+            outline: none; 
+            border-color: var(--xero-gold); 
+            background: #0f1218; 
+            box-shadow: 0 0 12px rgba(179, 140, 75, 0.2); 
+        }
+
+        .submit-btn { 
+            width: 100%; 
+            background: var(--xero-gold); 
+            color: #0b0e14; 
+            border: none; padding: 15px; 
+            border-radius: 4px; font-family: 'Lato', sans-serif; 
+            font-size: 15px; font-weight: 700; cursor: pointer; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center;
+        }
+        
+        .submit-btn:hover { 
+            transform: scale(1.03); 
+            box-shadow: 0 10px 20px rgba(179, 140, 75, 0.4); 
+            background: #c29d5a;
+        }
+
+        .trust-badge { text-align: center; margin-top: 25px; font-size: 11px; color: #475569; }
+
+        /* SAĞ TARAF (SİPARİŞ ÖZETİ TASARIMI) */
+        .summary-part { 
+            flex: 1; min-width: 300px; 
+            background: var(--xero-panel); 
+            border: 1px solid #252d3d; 
+            padding: 40px;
+            border-radius: 8px;
+            height: fit-content;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7); 
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        /* --- FOOTER ALANI --- */
+        .site-footer {
+            background-color: transparent;
+            padding: 40px 20px 20px 20px;
+            text-align: center;
+            border-top: 1px solid #1e293b;
+        }
+        .footer-links { margin-bottom: 25px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 12px; letter-spacing: 1.5px; margin: 0 15px; text-transform: uppercase; transition: all 0.3s ease; }
+        .footer-links a:hover { color: var(--xero-gold); text-shadow: 0 0 8px rgba(179, 140, 75, 0.5); }
+        .footer-links span { color: #334155; } 
+        .footer-logos { margin-bottom: 25px; display: flex; justify-content: center; align-items: center; gap: 20px; }
+        .footer-logos img { height: 25px; opacity: 0.7; transition: all 0.3s ease; cursor: pointer; }
+        .footer-logos img:hover { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); }
+        .copyright { color: #475569; font-size: 12px; }
+/* =========================================================
+           MOBİL OPTİMİZASYON (Sadece Telefonlar İçin)
+           ========================================================= */
+        @media only screen and (max-width: 768px) {
+            .top-logo { top: 15px; left: 15px; width: 60px; }
+            .main-content { padding: 80px 15px 30px 15px; }
+            /* Kutuları ters çevirdik (column-reverse) ve iç boşlukları (padding) küçülterek kompakt hale getirdik */
+            .register-container { gap: 20px; display: flex; flex-direction: column-reverse; }
+            .form-part, .summary-part { min-width: 100%; width: 100%; } 
+            .form-container, .summary-part { padding: 20px 15px; }
+            .form-header h2 { font-size: 22px; }
+            .site-footer { padding: 30px 15px 15px 15px; }
+            .footer-links { display: flex; flex-direction: column; gap: 10px; } /* Linkleri alt alta okunaklı dizer */
+            .footer-links span { display: none; } /* Mobilde aradaki noktaları gizler */
+            .footer-logos { flex-wrap: wrap; gap: 15px; }
+            /* Seçtikleriniz resim kutusunu mobilde daraltıp laptoptaki formuna getirir */
+    #ozet-img-wrapper { 
+        width: 250px !important; /* Yanları daraltır, köşedeki filigranları gizler */
+        height: 190px !important; /* Laptoptaki orana eşitler */
+        margin: 0 auto 20px auto !important; /* Kutuyu tam ortaya hizalar */
+        border-radius: 6px !important;
+    }
+        }
+/* --- İKON EFEKTLERİ (TEK VE TEMİZ VERSİYON) --- */
+svg.secure-logo {
+    fill: #64748b !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+svg.secure-logo:hover {
+    fill: #ffffff !important;
+    transform: scale(1.1) !important;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)) !important;
+}
+        /* NSA YAMASI: Sürükle-Bırak veri hırsızlığı ve Cross-Tab Leakage koruması */
+        img, a, svg {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+<noscript>
+    <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #101216; z-index: 999999; display: flex; align-items: center; justify-content: center; color: #9c7b5a; font-family: sans-serif; text-align: center; padding: 20px;">
+        <h2>GÜVENLİK İHLALİ</h2>
+        <p>Xero Elite altyapısına erişmek ve formları kullanabilmek için tarayıcınızda JavaScript'in etkin olması zorunludur. Lütfen JavaScript'i aktifleştirip sayfayı yenileyin.</p>
+    </div>
+</noscript>
+
+    <a href="index.html">
+        <img src="gorseller/gorsel2.webp" alt="Xero Elite Logo" class="top-logo">
+    </a>
+
+    <div class="main-content">
+        <div class="register-container">
+            
+            <div class="form-part">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Xero Elite Hesabınız</h2>
+                        <p>Eğitime erişiminiz için bilgilerinizi girin.</p>
+                    </div>
+                    
+                    <form id="kayitFormu" action="https://xero-api.xeroelite.workers.dev/" method="POST" autocomplete="off" spellcheck="false">
+                        <input type="hidden" id="gizli_egitim_id" name="Urun_Kodu" value="">
+
+                        <div style="opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1;" aria-hidden="true" tabindex="-1">
+                            <input type="text" name="x_alt_verify_99" tabindex="-1" autocomplete="new-password" aria-hidden="true">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Ad Soyad</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                <input type="text" name="name" placeholder="Tam adınızı giriniz" required maxlength="50" pattern="^[a-zA-ZğüşıöçĞÜŞİÖÇ\s\-\']+$" title="Güvenlik nedeniyle sadece harf, boşluk, tire ve kesme işareti kullanabilirsiniz." autocomplete="xero-secure-name">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>E-Posta Adresi</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                <input type="email" name="email" placeholder="Eğitimlerin iletileceği adres" required maxlength="100" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Geçerli bir TLD uzantılı e-posta adresi giriniz." autocomplete="xero-secure-email">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Telefon Numarası</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                                <input type="tel" name="phone" placeholder="+90 (555) 000 00 00" required maxlength="20" pattern="^[\d\s\+\-\(\)]+$" title="Geçerli bir telefon numarası giriniz. Sadece rakam, artı, tire ve parantez kullanılabilir." autocomplete="xero-secure-phone">
+                            </div>
+                        </div>
+                        
+                        <div class="agreement-check" style="margin-bottom: 20px; text-align: left; display: flex; align-items: flex-start; gap: 10px;">
+                            <input type="checkbox" id="yasal_onay" name="yasal_onay" required style="margin-top: 3px; accent-color: var(--xero-gold); cursor: pointer; pointer-events: auto !important; opacity: 1 !important; visibility: visible !important; transform: none !important;">
+                            <label for="yasal_onay" style="font-size: 11px; color: var(--text-muted); line-height: 1.5; letter-spacing: 0.5px; text-transform: none;">
+                                <a href="xero-sozlesmesi.html" target="_blank" rel="noopener noreferrer" style="color: var(--xero-gold); text-decoration: underline; font-weight: bold;">Xero Elite Kullanıcı ve Hizmet Sözleşmesi</a>'ni okudum, 18 yaşından büyük olduğumu ve tüm şartları gayrikabili rücu olarak kabul ettiğimi onaylıyorum.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                            Güvenli Ödeme Adımına Geç
+                        </button>
+                    </form>
+
+                    <div class="trust-badge">
+                        <span>✓ 256-Bit SSL Şifreli Güvenli Bağlantı</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-part">
+                <h3 style="color: var(--xero-gold); font-family: 'Ovo', serif; margin-bottom: 25px; letter-spacing: 1px; border-bottom: 1px solid #1e293b; padding-bottom: 15px; font-size: 20px; text-align: center; margin-top: 0;">SEÇTİKLERİNİZ</h3>
+                <div id="ozet-icerik" style="text-align: center;">
+                    <div id="ozet-img-wrapper" style="width: 100%; height: 220px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #1e293b; overflow: hidden; display: none;">
+                        <img id="ozet-img" src="" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.3s ease;" alt="Xero Elite Modülü">
+                    </div>
+                    <h4 id="ozet-isim" style="color: #E2E8F0; margin-bottom: 10px; font-family: 'Lato', sans-serif; font-size: 18px;">Eğitim Yükleniyor...</h4>
+                    <p id="ozet-aciklama" style="color: var(--text-muted); font-size: 13px; font-style: italic; margin-bottom: 25px; line-height: 1.6;"></p>
+                    <div id="ozet-fiyat" style="font-size: 28px; font-weight: bold; color: white; font-family: 'Ovo', serif; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 4px; border: 1px dashed #1e293b;">0 ₺</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="hakkimizda.html">HAKKIMIZDA</a> <span>•</span>
+            <a href="mesafeli-satis.html">MESAFELİ SATIŞ SÖZLEŞMESİ</a> <span>•</span>
+            <a href="gizlilik.html">GİZLİLİK SÖZLEŞMESİ</a> <span>•</span>
+            <a href="iptal-iade.html">İPTAL VE İADE ŞARTLARI</a> <span>•</span>
+            <a href="xero-sozlesmesi.html">XERO ELİTE SÖZLEŞMESİ</a>
+        </div>
+        
+        <div class="footer-logos">
+    <svg class="secure-logo" xmlns="http://www.w3.org/2000/svg" width="40" height="24" viewBox="0 0 40 24">
+        <text x="50%" y="60%" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" letter-spacing="0.5">VISA</text>
+    </svg>
+
+    <svg class="secure-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 15" width="40" height="24">
+        <circle cx="7.5" cy="7.5" r="7.5" />
+        <circle cx="16.5" cy="7.5" r="7.5" fill-opacity="0.6" />
+    </svg>
+
+    
+</div>
+
+        <div class="copyright">
+            © 2026 Xero Elite Siber Güvenlik Akademisi. Tüm Hakları Saklıdır.
+        </div>
+    </footer>
+
+    <script src="script.js" defer referrerpolicy="no-referrer"></script>
+</body>
+</html>

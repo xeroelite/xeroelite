@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; script-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="no-referrer">
+    <title>Xero Elite | Kapsamlı Kullanıcı, Hizmet ve Gizlilik Sözleşmesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Ovo&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --xero-gold: #9c7b5a; 
+            --xero-dark: #0B0E14;
+            --xero-panel: #11151c;
+            --text-muted: #64748b;
+        }
+
+        body { 
+            background-color: var(--xero-dark); 
+            color: #E2E8F0; 
+            font-family: 'Lato', sans-serif; 
+            margin: 0; padding: 0; 
+            display: flex; flex-direction: column; 
+            min-height: 100vh; 
+        }
+
+        .top-logo { position: absolute; top: 30px; left: 40px; width: 80px; transition: all 0.3s ease; }
+        .top-logo:hover { transform: scale(1.05); filter: drop-shadow(0 0 10px rgba(156, 123, 90, 0.4)); }
+
+        /* --- KÜÇÜLTÜLMÜŞ VE PREMİUM EFEKTLİ KUTU --- */
+        .legal-container {
+            max-width: 780px; /* 1000px'den 780px'e düşürdük, daha ince ve fit oldu */
+            margin: 100px auto 50px auto;
+            background: rgba(17, 21, 28, 0.65); /* Yarı saydam siber cam efekti */
+            backdrop-filter: blur(15px); /* Arkadaki derinliği bulandırır */
+            border: 1px solid rgba(156, 123, 90, 0.2); /* Çok ince bronz sınır */
+            border-radius: 12px;
+            padding: 45px 50px; /* İç boşlukları daralttık */
+            box-shadow: 0 25px 50px rgba(0,0,0,0.9), inset 0 0 20px rgba(156, 123, 90, 0.05); /* Premium iç parlama */
+            transition: all 0.4s ease;
+        }
+
+        .legal-container:hover {
+            box-shadow: 0 25px 60px rgba(0,0,0,1), inset 0 0 30px rgba(156, 123, 90, 0.1);
+            border-color: rgba(156, 123, 90, 0.4);
+        }
+
+        .legal-header { text-align: center; margin-bottom: 35px; border-bottom: 1px solid rgba(156,123,90,0.2); padding-bottom: 25px; }
+        .legal-header h1 { font-family: 'Ovo', serif; color: var(--xero-gold); font-size: 24px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; text-shadow: 0 0 15px rgba(156,123,90,0.3); }
+        .legal-header p { color: var(--text-muted); font-size: 12px; }
+
+        .legal-content h2 { font-family: 'Ovo', serif; color: var(--xero-gold); font-size: 16px; margin-top: 35px; margin-bottom: 15px; border-left: 3px solid var(--xero-gold); padding-left: 12px; background: rgba(156, 123, 90, 0.03); padding-top: 8px; padding-bottom: 8px; letter-spacing: 1px; }
+        .legal-content p, .legal-content li { color: #94a3b8; font-size: 13px; line-height: 1.7; margin-bottom: 12px; text-align: justify; transition: color 0.3s ease; }
+        
+        /* Yazının üstüne gelince hafifçe aydınlanma efekti */
+        .legal-content p:hover, .legal-content li:hover { color: #e2e8f0; } 
+        
+        .legal-content ul { padding-left: 20px; margin-bottom: 20px; }
+        .legal-content li::marker { color: var(--xero-gold); font-size: 10px; }
+        
+        .highlight { color: #ef4444; font-weight: bold; background: rgba(239, 68, 68, 0.1); padding: 2px 5px; border-radius: 3px; }
+        .strong-gold { color: var(--xero-gold); font-weight: bold; }
+
+        /* --- FOOTER --- */
+        .site-footer { background-color: transparent; padding: 40px 20px 20px 20px; text-align: center; border-top: 1px solid #1e293b; margin-top: auto; }
+        .footer-links { margin-bottom: 25px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 12px; letter-spacing: 1.5px; margin: 0 15px; text-transform: uppercase; transition: all 0.3s ease; }
+        .footer-links a:hover { color: var(--xero-gold); }
+        .footer-links span { color: #334155; }
+        .copyright { color: #475569; font-size: 12px; }
+/* --- MOBİL OPTİMİZASYON --- */
+        @media only screen and (max-width: 768px) {
+            body { padding: 20px 10px; }
+            .legal-container { padding: 25px 20px; margin-top: 80px; }
+            h1 { font-size: 20px; }
+            h2 { font-size: 16px; margin-top: 25px; }
+            p, .legal-content li { font-size: 14px; }
+            .top-logo { top: 15px; left: 15px; width: 60px; }
+        }
+    /* NSA YAMASI: Iframe, kopyalama, sürükle-bırak hırsızlığı ve gömülü obje kilidi */
+        body { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+        iframe, object, embed { display: none !important; pointer-events: none !important; }
+        img, a, svg { -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-select: none; }
+    </style>
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+
+    <a href="index.html">
+        <img src="gorseller/gorsel2.webp" alt="Xero Elite Logo" class="top-logo">
+    </a>
+
+    <div class="legal-container">
+        <div class="legal-header">
+            <h1>Xero Elite Kapsamlı Kullanıcı ve Hizmet Sözleşmesi</h1>
+            <p>Sürüm: 3.0.0 (Tam Kapsamlı Yasal Metin)</p>
+        </div>
+
+        <div class="legal-content">
+            <p>İşbu Kapsamlı Kullanıcı, Hizmet ve Gizlilik Sözleşmesi (bundan böyle kısaca "Sözleşme" olarak anılacaktır), Xero Elite Siber Güvenlik Akademisi (bundan böyle "Xero Elite", "Akademi" veya "Hizmet Sağlayıcı" olarak anılacaktır) ile Xero Elite'in sunduğu her türlü web platformuna, eğitime, dijital ürüne, danışmanlık hizmetine, yazılıma, mobil uygulamaya, CTF yarışmasına ve topluluk grubuna erişim sağlayan gerçek ve tüzel kişiler (bundan böyle "Kullanıcı" veya "Müşteri" olarak anılacaktır) arasında, elektronik ortamda onaylandığı an itibarıyla yürürlüğe girmiştir.</p>
+
+            <h2>MADDE 1: SÖZLEŞMENİN KONUSU VE KAPSAMI</h2>
+            <p>İşbu sözleşme; Kullanıcının Xero Elite platformu üzerinden alacağı 8 (sekiz) modüllük siber güvenlik eğitimlerinin, 3 (üç) kalem kurumsal bilişim hizmetinin, CTF etkinliklerinin, Xero Premium Society topluluğunun ve gelecekte sunulacak yazılım/mobil uygulamaların kullanım, telif, iade ve hukuki sorumluluk sınırlarını kesin olarak belirler.</p>
+
+            <h2>MADDE 2: DİJİTAL ÜRÜNLERİN İADESİ VE CAYMA HAKKI İSTİSNASI</h2>
+            <p>Xero Elite tarafından sunulan eğitim içerikleri (exploit senaryoları, Cloud & Infrastructure / Network Security modülü, Saha Notu belgeleri vb.) tamamen "Dijital Ürün" statüsündedir.</p>
+            <ul>
+                <li><span class="highlight">6502 Sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği (Madde 15/1-ğ) amir hükmü uyarınca;</span> "Elektronik ortamda anında ifa edilen hizmetler ve gayrimaddi mallarda" cayma hakkı bulunmamaktadır.</li>
+                <li>Eğitim paneline ilk giriş yapıldığı, materyallerin (web okuyucu vb.) sunucu tarafından Kullanıcı IP'sine iletildiği saniyeden itibaren <span class="highlight">hiçbir koşul ve mazeret altında iptal veya ücret iadesi yapılamaz.</span> Banka ve aracı ödeme kuruluşlarına yapılacak haksız "Chargeback (Ters İbraz)" başvurularında Kullanıcıya maddi tazminat davası açılacaktır. Platform üzerindeki tüm finansal işlemler, BDDK onaylı 3. taraf aracı ödeme kuruluşları üzerinden gerçekleştirilmektedir. Kullanıcının kredi kartı veya ödeme bilgilerinin çalınması, kopyalanması veya ödeme altyapısında yaşanacak sistemsel gecikme ve teknik aksaklıklardan Xero Elite hiçbir koşulda hukuken veya madden sorumlu tutulamaz.</li>
+            </ul>
+
+            <h2>MADDE 3: SİBER SUÇLAR, YASAL UYARI VE KESİN SORUMLULUK REDDİ</h2>
+            <p>Eğitimlerde öğretilen Red Team (Saldırı) ve Blue Team (Savunma) teknikleri, exploit yazımı, güvenlik açığı sömürme (vulnerability exploitation) işlemleri <span class="strong-gold">sadece kapalı laboratuvar ortamlarında savunma reflekslerini geliştirmek içindir.</span></p>
+            <ul>
+                <li>Kullanıcının bu teknikleri yetkisiz sistemlerde, kurumlarda veya şahıs cihazlarında uygulaması kati suretle yasaktır.</li>
+                <li>Meydana gelebilecek her türlü yasa dışı eylemde, <span class="highlight">5237 Sayılı TCK (Madde 243, 244, 245) ve 6698 Sayılı KVKK kapsamında tüm cezai ve hukuki yükümlülük doğrudan Kullanıcıya aittir.</span> Xero Elite, Kullanıcının hiçbir eyleminden dolayı taraf, sanık veya şüpheli gösterilemez; rücu edilemez. Kullanıcı, işbu platformdaki eğitimleri ve hizmetleri satın alabilmek için 18 yaşını doldurduğunu ve tam hukuki işlem yapma ehliyetine sahip olduğunu peşinen kabul ve beyan eder. Yanlış yaş beyanından doğacak tüm cezai ve hukuki süreçlerden Kullanıcı ve/veya yasal vasisi tek başına sorumludur.</li>
+            </ul>
+
+            <h2>MADDE 4: FİKRİ MÜLKİYET, TELİF HAKLARI VE KORSANLA MÜCADELE</h2>
+            <p>Xero Elite'in 8 bölümlük eğitim serisi, kod blokları ve müfredatı <span class="strong-gold">T.C. Kültür ve Turizm Bakanlığı nezdinde tek bir tescilli eser olarak korunmaktadır.</span></p>
+            <ul>
+                <li>İçeriklerin PDF, Video veya diğer formatlarda izinsiz kopyalanması, ekran görüntüsü/kaydı alınması yasaktır. İndirmeyi zorlaştırmak için kullanılan Web-Based Interactive Viewer sistemine yapılacak her türlü Tersine Mühendislik (Reverse Engineering) müdahalesi suçtur.</li>
+                <li>Telif haklarının Telegram, Discord, Torrent veya diğer mecralarda ihlal edildiğinin tespiti halinde <span class="highlight">5846 Sayılı FSEK uyarınca savcılığa suç duyurusunda bulunulacak</span> ve ağır maddi tazminat talep edilecektir.</li>
+            </ul>
+
+            <h2>MADDE 5: KURUMSAL HİZMETLER VE SIZMA TESTİ (PENTEST) PROTOKOLÜ</h2>
+            <p>Xero Elite tarafından sunulan 3 ana hizmet (Sızma Testi, Güvenlik Analizi, Zafiyet Taraması) kapsamında:</p>
+            <ul>
+                <li>Hizmetler, yalnızca hedef sistemin resmi yetkilisinden ıslak/e-imzalı muvafakatname alındıktan sonra başlatılır. Yanlış beyanla 3. şahıs sistemlerine test talep eden müşteri, oluşacak tüm yasal zararlardan şahsen sorumludur.</li>
+                <li><span class="strong-gold">Sistem Kesintisi (Downtime) Feragatnamesi:</span> Testler sırasında yaşanabilecek sunucu çökmeleri, veri kayıpları veya ticaretin durması gibi durumlardan (Müşteri önceden yedek almakla yükümlüdür) Xero Elite maddi ve manevi olarak sorumlu tutulamaz. Satın alınan kurumsal güvenlik testleri (Pentest vb.) ve özel araç geliştirme hizmetleri, taraflar arasında ayrıca ıslak/e-imzalı olarak akdedilecek olan 'Gizlilik Sözleşmesi (NDA)' ve 'Angajman Kuralları (Rules of Engagement - RoE)' protokollerine tabidir. İşbu platform sözleşmesi ile kuruma özel imzalanan protokoller arasında uyuşmazlık olması durumunda, özel protokol maddeleri geçerli olacaktır.</li>
+            </ul>
+
+            <h2>MADDE 6: CTF (CAPTURE THE FLAG) YARIŞMA KURALLARI VE ALTYAPI GÜVENLİĞİ</h2>
+            <p>CTF yarışmalarına ve simülasyonlara bağlanan Kullanıcılar, yalnızca kendilerine atanan hedefleri (Target) analiz edebilir. CTF sunucusuna (Host), veri tabanına veya diğer yarışmacılara yapılacak olan DoS/DDoS, Brute-Force veya yetkisiz sızma denemeleri <span class="highlight">anında diskalifiye, HWID ban ve adli soruşturma</span> ile sonuçlanacaktır.</p>
+
+            <h2>MADDE 7: XERO PREMIUM SOCIETY (KAPALI TOPLULUK) ETİK KURALLARI</h2>
+            <p>Xero Premium Society, beyaz şapkalı (White-Hat) ve profesyonel siber güvenlik uzmanlarına özeldir.</p>
+            <ul>
+                <li>Grup içinde sızdırılmış veri tabanları (leak/dump), çalıntı kredi kartları (CC), fidye yazılımları (Ransomware) veya 0-day zafiyetlerin kara borsa satışının yapılması kesinlikle yasaktır.</li>
+                <li>Siber suç teşkil eden organizasyonlar planlayan üyeler derhal ihraç edilecek olup, sistem logları kolluk kuvvetleriyle paylaşılacaktır. İhraç edilen üyeye ücret iadesi yapılmaz.</li>
+            </ul>
+
+            <h2>MADDE 8: YAPAY ZEKA (AI) ENTEGRASYONU VE OTOMASYON FERAGATNAMESİ</h2>
+            <p>Xero Elite tarafından eğitim ve analiz amacıyla sağlanan Yapay Zeka (AI) destekli güvenlik asistanları, tehdit tespitlerini ihtimaller üzerinden "tavsiye" niteliğinde sunar. Yapay zekanın ürettiği <span class="strong-gold">Hatalı Pozitif (False-Positive) veya Hatalı Negatif (False-Negative)</span> sonuçlara güvenerek kurum altyapısında yapılacak yanlış konfigürasyonlardan Xero Elite sorumlu tutulamaz.</p>
+
+            <h2>MADDE 9: KRİPTO VARLIKLAR VE MOBİL UYGULAMA SORUMLULUK REDDİ</h2>
+            <p>Xero Elite'in gelecekte çıkaracağı kripto ve borsa cüzdanı güvenlik analiz uygulamaları (iOS/Android) bir finans kuruluşu veya yatırım danışmanlığı aracı değildir. Cüzdan güvenlik analizleri, varlıkların %100 güvende olduğunu garanti etmez. <span class="highlight">Phishing, borsa hacklenmesi veya seed-phrase kaybı sonucu oluşacak coin/token kayıplarından Xero Elite hiçbir şekilde sorumlu tutulamaz.</span></p>
+
+            <h2>MADDE 10: 3. TARAF ARAÇLAR VE AÇIK KAYNAKLI YAZILIMLAR</h2>
+            <p>Eğitimlerde kullanılan Kali Linux, Metasploit, Nmap, Pwntools, Burp Suite gibi üçüncü taraf ve açık kaynaklı yazılımların güncellemelerinden, sürüm değişikliklerinden veya bu araçların sisteminizde yaratabileceği kararsızlıklardan Akademi sorumlu değildir. Müfredat, yayınlandığı tarihteki en stabil versiyonlara göre kurgulanmıştır.</p>
+
+            <h2>MADDE 11: MÜCBİR SEBEPLER (FORCE MAJEURE) VE ALTYAPI KESİNTİLERİ</h2>
+            <p>Xero Elite; Cloudflare, GitHub Pages veya sunucu barındırma şirketleri kaynaklı küresel kesintilerden, doğal afetlerden, savaşlardan, pandemi kararlarından veya telekomünikasyon altyapısı çökmelerinden dolayı platformun veya hizmetlerin (SLA) kesintiye uğramasından hukuken sorumlu tutulamaz.</p>
+
+            <h2>MADDE 12: GİZLİLİK, LOGLAMA VE VERİ KORUMA (KVKK/GDPR)</h2>
+            <p>Kullanıcının sisteme kayıt esnasında verdiği IP adresi, cihaz bilgisi (User-Agent), lokasyon ve erişim saatleri; sistemin güvenliğini sağlamak, çoklu hesap (account sharing) paylaşımını engellemek ve yasal merciler (Savcılık/Mahkeme) tarafından talep edilmesi ihtimaline karşı 5651 Sayılı Kanun gereği güvenle loglanmakta ve saklanmaktadır. Verileriniz, yasal zorunluluklar haricinde 3. şahıslarla reklam amacıyla paylaşılmaz.</p>
+
+            <h2>MADDE 13: HESAP ASKIYA ALMA, FESİH VE TEK TARAFLI İPTAL HAKKI</h2>
+            <p>Kullanıcının işbu Sözleşme şartlarından herhangi birini (özellikle fikri mülkiyet, etik kurallar ve siber suç maddelerini) ihlal etmesi durumunda; Xero Elite, Kullanıcının eğitim paneline, CTF sunucularına ve topluluk gruplarına erişimini <span class="highlight">önceden bildirim yapmaksızın ve ücret iadesi gerçekleştirmeksizin kalıcı olarak iptal etme</span> hakkına sahiptir. İşbu Sözleşme'nin herhangi bir maddesinin, fıkrasının veya hükmünün yetkili bir mahkeme veya yasal merci tarafından geçersiz, yasadışı veya uygulanamaz olduğuna karar verilmesi halinde; bu durum Sözleşme'nin geri kalan maddelerinin geçerliliğini, yasallığını ve yürürlüğünü hiçbir şekilde etkilemez. Geçersiz sayılan madde, Sözleşme'nin asıl amacına ve tarafların iradesine en yakın yasal hükümle değiştirilmiş kabul edilir.</p>
+
+            <h2>MADDE 14: İÇERİK, MÜFREDAT VE FİYAT DEĞİŞİKLİĞİ HAKKI</h2>
+            <p>Siber güvenlik sektörünün dinamik yapısı gereği Xero Elite, mevcut 8 eğitim modülünü, hizmet içeriklerini veya fiyatlandırmaları haber vermeksizin güncelleme, ekleme yapma veya kaldırma hakkını saklı tutar. Satın alım yapan Kullanıcı, içeriğin statik kalmayacağını kabul eder. Siber güvenlik ekosistemi doğası gereği sürekli değişen ve güncellenen bir yapıya sahiptir. Eğitimlerde incelenen zafiyetler, sömürü betikleri (Exploit), donanımsal atlatma teknikleri (Bypass) veya kullanılan üçüncü taraf araçlar; hedef işletim sistemlerinin (Windows, Linux, iOS, Android vb.) veya mimarilerin yama (Patch) alması neticesinde zamanla işlevsiz kalabilir. Xero Elite, eğitim materyallerini 'olduğu gibi' (as-is) sunar ve öğretilen spesifik sömürü kodlarının gelecekte %100 çalışmaya devam edeceğinin teknik veya yasal garantisini vermez.</p>
+
+            <h2>MADDE 15: SÖZLEŞME GÜNCELLEMELERİ VE YÜRÜRLÜK</h2>
+            <p>Xero Elite, işbu sözleşme maddelerinde dilediği zaman tek taraflı olarak değişiklik yapma hakkına sahiptir. Değişiklikler, `xero-sozlesmesi.html` sayfasında yayınlandığı an yürürlüğe girer. Sisteme giriş yapmaya veya hizmetleri kullanmaya devam eden Kullanıcı, güncel sözleşmeyi kabul etmiş sayılır. İSTİHDAM VE KAZANÇ GARANTİSİ REDDİ:
+Xero Elite tarafından sunulan eğitim modülleri (Exploit Development, SOC Analyst, Web/Mobile Security vb.) ve sertifikasyonlar, yalnızca Kullanıcının teknik donanımını ve vizyonunu geliştirmeyi amaçlar. Xero Elite; Sözleşme konusu eğitimlerin tamamlanması neticesinde Kullanıcıya herhangi bir unvan, kesin istihdam (işe yerleştirme), terfi veya finansal kazanç garantisi sunmaz. Eğitim sonrası sektörel başarı, tamamen Kullanıcının bireysel eforuna ve yeteneğine tabidir.</p>
+
+            <h2>MADDE 16: TEBLİGAT ADRESİ</h2>
+            <p>Kullanıcının kayıt olurken bildirdiği e-posta adresi, yasal tebligat adresi olarak kabul edilecektir. Bu adrese yapılacak bildirimler, Kullanıcıya hukuken tebliğ edilmiş sayılır.</p>
+
+            <h2>MADDE 17: UYGULANACAK HUKUK VE YETKİLİ MAHKEMELER</h2>
+            <p>İşbu Sözleşmenin yorumlanmasında, uygulanmasında ve Kullanıcı ile Xero Elite arasında doğabilecek her türlü ticari, hukuki veya cezai ihtilafın çözümünde <span class="strong-gold">Türkiye Cumhuriyeti Kanunları</span> uygulanacaktır. Kullanıcının işbu sözleşmeyi, etik kuralları veya yürürlükteki yasaları ihlal etmesi neticesinde 3. şahısların veya resmi makamların açacağı davalar sebebiyle Xero Elite'in maruz kalacağı her türlü idari para cezası, tazminat ve avukatlık masrafları dâhil tüm doğrudan/dolaylı zararlar, fer'ileriyle birlikte Kullanıcıya rücu edilecektir. Kullanıcı bu bedelleri ilk talepte nakden ve defaten ödemeyi gayrikabili rücu kabul eder.</p>
+
+            <p style="margin-top: 50px; font-weight: bold; color: var(--xero-gold); text-align: center; border: 1px solid var(--xero-gold); padding: 20px; border-radius: 5px;">
+                XERO ELITE SİBER GÜVENLİK AKADEMİSİ<br><br>
+                Sisteme kayıt olan, formu dolduran, ödeme yapan veya içeriklere erişim sağlayan her türlü kullanıcı, yukarıdaki 17 (on yedi) ana maddeyi tam ve eksiksiz olarak okumuş, anlamış ve elektronik ortamda gayrikabili rücu (geri dönülemez) olarak kabul etmiştir.
+            </p>
+        </div>
+    </div>
+
+    <!-- ALT BİLGİ (FOOTER) -->
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="hakkimizda.html">HAKKIMIZDA</a> <span>•</span>
+            <a href="mesafeli-satis.html">MESAFELİ SATIŞ SÖZLEŞMESİ</a> <span>•</span>
+            <a href="gizlilik.html">GİZLİLİK SÖZLEŞMESİ</a> <span>•</span>
+            <a href="iptal-iade.html">İPTAL VE İADE ŞARTLARI</a> <span>•</span>
+            <a href="xero-sozlesmesi.html" style="color: #9c7b5a; text-shadow: 0 0 10px rgba(156, 123, 90, 0.5);">XERO ELİTE SÖZLEŞMESİ</a>
+        </div>
+        <div class="copyright">
+            © 2026 Xero Elite Siber Güvenlik Akademisi. Tüm Hakları Saklıdır.
+        </div>
+    </footer>
+
+</body>
+</html>
